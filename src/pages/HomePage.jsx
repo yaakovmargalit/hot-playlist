@@ -22,6 +22,7 @@ export function HomePage() {
 
     const onSearch = term => {
         setSearchTerm(() => term)
+        
     }
 
     return (
