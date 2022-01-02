@@ -1,6 +1,8 @@
 import axios from "axios"
+import { storageService } from "./storageService"
 export const searchService = {
-    getPlalist
+    getPlalist,
+    saveRecentSearches
 }
 async function getPlalist(term) {
     try {
@@ -8,6 +10,15 @@ async function getPlalist(term) {
         return _resForList(res.data.data)
     } catch (error) {
     }
+}
+
+function saveRecentSearches(term){
+    if(!storageService.load('recent-searches')){
+        storageService.store('recent-searches',[])
+    }
+    var recentSearches = storageService.load('recent-searches')
+    recentSearches.unshift(term)
+    storageService.store('recent-searches',recentSearches)
 }
 
 function _resForList(data) {

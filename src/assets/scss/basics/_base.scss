@@ -38,18 +38,18 @@ a {
   text-decoration: none;
   color: inherit;
 }
-a.active{
-  color: rgb(218, 199, 223);
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 4px;
-    width: 100%;
-    background-color: rgb(218, 199, 223);
-}
-}
+// a.active{
+//   color: rgb(218, 199, 223);
+//   &::after {
+//     content: "";
+//     position: absolute;
+//     bottom: 0;
+//     left: 0;
+//     height: 4px;
+//     width: 100%;
+//     background-color: rgb(218, 199, 223);
+// }
+// }
 
 button {
   font-family: inherit;

@@ -4,7 +4,7 @@ export function ListControls(props) {
         <div className="list-controls ">
             <div className="container">
                 <span title="Next Results" onClick={props.onNextResults} className="material-icons ">
-                    keyboard_tab
+                skip_next
                 </span>
                 <div>
                     <span title="Grid View" onClick={() => props.onChangeMode(false)} className="material-icons ">
