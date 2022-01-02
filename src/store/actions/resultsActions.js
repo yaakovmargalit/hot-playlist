@@ -11,3 +11,10 @@ export function loadResults(term) {
         }
     }
 }
+export function setResultsPage() {
+    return (dispatch, getState) => {
+        var { results, page } = getState().resultsModule
+        page = (results.length - page < 6) ? 0 : page + 6
+        dispatch({ type: 'SET_PAGE', page })
+    }
+}

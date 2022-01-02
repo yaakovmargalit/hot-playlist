@@ -1,8 +1,7 @@
 import { useLocation } from "react-router-dom";
-import { useParams } from "react-router-dom"
 
 export function ImageContainer(props) {
-    const { query, search } = useLocation();
+    const { query } = useLocation();
     console.log(query);
     return (
         <div>
