@@ -14,11 +14,9 @@ export function SearchBar(props) {
 
     const { term } = searchTerm
     return (
-        <div>
-            <form onSubmit={onSearchGo}>
+            <form className='search-bar' onSubmit={onSearchGo}>
                 <input onChange={handleChange} value={term} type="text" name="term" id="term" />
                 <button>Go</button>
             </form>
-        </div>
     )
 }

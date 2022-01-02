@@ -1,14 +1,20 @@
 
 export function ListControls(props) {
     return (
-        <div>
-            <button onClick={props.onNextResults}>====next</button>
-            <span onClick={()=>props.onChangeMode(false)} class="material-icons ">
-                grid_view
-            </span>
-            <span onClick={()=>props.onChangeMode(true)} class="material-icons">
-                format_list_bulleted
-            </span>
+        <div className="list-controls ">
+            <div className="container">
+                <span title="Next Results" onClick={props.onNextResults} className="material-icons ">
+                    keyboard_tab
+                </span>
+                <div>
+                    <span title="Grid View" onClick={() => props.onChangeMode(false)} className="material-icons ">
+                        grid_view
+                    </span>
+                    <span title="List View" onClick={() => props.onChangeMode(true)} className="material-icons">
+                        format_list_bulleted
+                    </span>
+                </div>
+            </div>
         </div>
     )
 }

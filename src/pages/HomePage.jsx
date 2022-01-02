@@ -5,12 +5,13 @@ import { ListControls } from "../cmps/ListControls";
 import { ResultsList } from "../cmps/ResultsList";
 import { SearchBar } from "../cmps/SearchBar";
 import { searchService } from "../services/search.servcis";
+import { storageService } from "../services/storageService";
 import { loadResults, setResultsPage } from "../store/actions/resultsActions";
 
 export function HomePage() {
 
     const [searchTerm, setSearchTerm] = useState('')
-    const [isListMode, setDisplayList] = useState(false)
+    const [isListMode, setDisplayList] = useState(storageService.load('display-mode',true))
     const { results, page } = useSelector(state => state.resultsModule)
     const dispatch = useDispatch()
 
@@ -39,11 +40,14 @@ export function HomePage() {
     }
     const onChangeMode = (isList)=>{
         setDisplayList(isList)
+        storageService.store('display-mode',isList)
     }
     return (
-        <div className="home-page">
+        <div className="home-page ">
+        <div className="container">
             <SearchBar onSearch={onSearch} />
             <ResultsList isListMode={isListMode} resultsList={resultsForList()} />
+        </div>
             <ListControls onNextResults={onNextResults} onChangeMode={onChangeMode} />
         </div>
     )
