@@ -17,6 +17,8 @@ function saveRecentSearches(term){
         storageService.store('recent-searches',[])
     }
     var recentSearches = storageService.load('recent-searches')
+    if(recentSearches.includes(term)) return
+    if(recentSearches.length>=5) recentSearches.pop()
     recentSearches.unshift(term)
     storageService.store('recent-searches',recentSearches)
 }

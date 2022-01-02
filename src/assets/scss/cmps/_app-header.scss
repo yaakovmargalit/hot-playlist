@@ -1,7 +1,37 @@
-.app-header{
+.app-header {
     display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    .active{
+        color: rgb(255, 221, 169);;
+    }
+    .nav-link {
+        position: relative;
+        padding-right: 10px;
+        padding-bottom: 5px;
+        text-align: center;
+        &:hover{
+            color: rgb(255, 221, 169);
+        }
+        &:hover::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            width: 10px;
+            background-color: rgb(255, 221, 169);
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .app-header {
+        flex-direction: column;
+        > :first-child {
+            margin-bottom: 10px;
+        }
+    }
 }

@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { HomePage } from './pages/HomePage';
-import { ImageContainer } from './pages/ImageContainer';
-import { RecentSearches } from './pages/RecentSearches';
+
 
 
 function App() {

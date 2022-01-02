@@ -1,0 +1,9 @@
+.recent-searches-item{
+    padding: 7px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    &:hover{
+        background-color: rgba(117, 117, 117, 0.452);
+    }
+}

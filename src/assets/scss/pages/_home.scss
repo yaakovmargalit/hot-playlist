@@ -4,4 +4,11 @@
     width: 100%;
     background: rgb(2, 0, 36);
     background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(9, 93, 121, 1) 76%);
+    .empty-msg{
+        font-size: 50px;
+        max-width: 100%;
+        font-weight: 900;
+        color: rgba(7, 7, 7, 0.452);
+    }
 }
+
