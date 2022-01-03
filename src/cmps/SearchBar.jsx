@@ -16,7 +16,7 @@ export function SearchBar(props) {
     return (
             <form className='search-bar' onSubmit={onSearchGo}>
                 <input placeholder='Search...' onChange={handleChange} value={term} type="text" name="term" id="term" />
-                <button>Go</button>
+                <button className='search-btn'>Go</button>
             </form>
     )
 }

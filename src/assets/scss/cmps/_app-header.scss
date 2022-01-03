@@ -4,6 +4,11 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    nav{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .active {
         color: rgb(255, 221, 169);
     }
@@ -17,6 +22,19 @@
         &:hover {
             color: rgb(255, 221, 169);
             background-color: rgba(0, 0, 0, 0.171);
+        }
+    }
+    .toggle-mode-btn{
+        cursor: pointer;
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-inline: 3px;
+        &:hover{
+            background-color: rgba(197, 197, 197, 0.541);
         }
     }
 }

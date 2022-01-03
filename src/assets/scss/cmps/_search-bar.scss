@@ -7,12 +7,13 @@
         border-radius: 5px;
         background-color: rgba(0, 0, 0, 0.116);
     }
-    button {
+    .search-btn {
         background-color: rgba(0, 0, 0, 0.377);
         padding: 15px;
         border-radius: 5px;
         font-size: 18px;
         border: none;
+        color: inherit;
         margin-left: 5px;
     }
 }
