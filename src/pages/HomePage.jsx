@@ -61,7 +61,7 @@ export function HomePage() {
                             <Route component={ImageContainer} path={'/player'} />
                             <Route component={RecentSearches} path={'/recent-searches'} />
                             <Route component={AboutPage} path={'/about'} />
-                            <Route path={'/'}>
+                            <Route path={'/hot-playlist'}>
                                <ResultsList isListMode={isListMode} resultsList={resultsForList()} />
                             </Route>
                         </Switch>

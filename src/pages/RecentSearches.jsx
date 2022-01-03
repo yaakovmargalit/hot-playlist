@@ -15,7 +15,7 @@ export function RecentSearches() {
                 if (!term) return
                 try {
                     await dispatch(loadResults(term))
-                    history.push('/')
+                    history.push('/hot-playlist')
                 } catch (err) {
                     console.log(err);
                 }
