@@ -9,6 +9,9 @@
         font-weight: 900;
         color: rgba(7, 7, 7, 0.452);
     }
+    .app-center{
+        height: 100%;
+    }
 }
 
 .fade-enter{
@@ -17,6 +20,6 @@
 }
 
 .fade-enter.fade-enter-active{
-    opacity: 1;
+    opacity: 0.5;
     transition: opacity 200ms ease-in;
 }

@@ -8,9 +8,6 @@ function App() {
     <Router>
       <div className="App">
         <main className=''>
-          {/* <Switch>
-            <Route component={HomePage} path={'/'} />
-          </Switch> */}
           <HomePage/>
         </main>
       </div>

@@ -55,9 +55,9 @@ export function HomePage() {
         <div className="home-page ">
             <div className="container">
                 <AppHeader onSearch={onSearch} />
-                <TransitionGroup>
+                <TransitionGroup className='app-center'>
                     <CSSTransition timeout={200} classNames='fade' key={loc.key}>
-                        <Switch location={loc}>
+                        <Switch location={loc} >
                             <Route component={ImageContainer} path={'/hot-playlist/player'} />
                             <Route component={RecentSearches} path={'/hot-playlist/recent-searches'} />
                             <Route component={AboutPage} path={'/hot-playlist/about'} />
