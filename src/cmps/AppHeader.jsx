@@ -6,8 +6,8 @@ export function AppHeader(props) {
         <div className="app-header">
             <nav>
                 <NavLink className='nav-link' exact to={'/hot-playlist'}>Home</NavLink>
-                <NavLink className='nav-link' to={'/recent-searches'}>Recent</NavLink>
-                <NavLink className='nav-link' to={'/about'}>About</NavLink>
+                <NavLink className='nav-link' to={'/hot-playlist/recent-searches'}>Recent</NavLink>
+                <NavLink className='nav-link' to={'/hot-playlist/about'}>About</NavLink>
             </nav>
             <SearchBar onSearch={props.onSearch} />
         </div>

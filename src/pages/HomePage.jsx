@@ -27,7 +27,7 @@ export function HomePage() {
         (async () => {
             if (!searchTerm) return
             try {
-                history.push('/')
+                history.push('/hot-playlist')
                 await dispatch(loadResults(searchTerm))
                 setSearchTerm(() => '')
             } catch (err) {
@@ -58,9 +58,9 @@ export function HomePage() {
                 <TransitionGroup>
                     <CSSTransition timeout={200} classNames='fade' key={loc.key}>
                         <Switch location={loc}>
-                            <Route component={ImageContainer} path={'/player'} />
-                            <Route component={RecentSearches} path={'/recent-searches'} />
-                            <Route component={AboutPage} path={'/about'} />
+                            <Route component={ImageContainer} path={'/hot-playlist/player'} />
+                            <Route component={RecentSearches} path={'/hot-playlist/recent-searches'} />
+                            <Route component={AboutPage} path={'/hot-playlist/about'} />
                             <Route path={'/hot-playlist'}>
                                <ResultsList isListMode={isListMode} resultsList={resultsForList()} />
                             </Route>
