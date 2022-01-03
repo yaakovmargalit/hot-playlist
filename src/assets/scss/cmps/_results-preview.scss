@@ -54,8 +54,8 @@
 
 @media (max-width: 500px) {
     .grid-mode {
-        width: 200px;
-        height: 200px;
+        width: 150px;
+        height: 150px;
         box-shadow: 0 0 9px 1px #ffffff78;
         border-radius: 3px;
         a {
@@ -64,7 +64,7 @@
             width: 100%;
             height: 100%;
             img {
-                width: 100px;
+                width: 130px;
                 grid-row: 1;
                 grid-column: 1;
             }

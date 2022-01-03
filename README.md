@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Hot Playlist ---- Yaakov Margalit
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Link to the app](https://yaakovmargalit.github.io/hot-playlist/).
 
 ## Available Scripts
 

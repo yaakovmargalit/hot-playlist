@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { Route, Switch, useLocation } from "react-router-dom";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { AppHeader } from "../cmps/AppHeader";
 import { ListControls } from "../cmps/ListControls";
 import { ResultsList } from "../cmps/ResultsList";
@@ -28,6 +29,7 @@ export function HomePage() {
             try {
                 history.push('/')
                 await dispatch(loadResults(searchTerm))
+                setSearchTerm(() => '')
             } catch (err) {
                 console.log(err);
             }
@@ -53,14 +55,18 @@ export function HomePage() {
         <div className="home-page ">
             <div className="container">
                 <AppHeader onSearch={onSearch} />
-                <Switch>
-                    <Route component={RecentSearches} path={'/recent-searches'} />
-                    <Route component={ImageContainer} path={'/player'} />
-                    <Route component={AboutPage} path={'/about'} />
-                </Switch>
-                {(loc.pathname === '/' || loc.pathname === '/hot-playlist') &&
-                    (results.length) ? <ResultsList isListMode={isListMode} resultsList={resultsForList()} />
-                    : loc.pathname === '/' ? <div className="empty-msg">Search something to play ...</div> : ''}
+                <TransitionGroup>
+                    <CSSTransition timeout={200} classNames='fade' key={loc.key}>
+                        <Switch location={loc}>
+                            <Route component={ImageContainer} path={'/player'} />
+                            <Route component={RecentSearches} path={'/recent-searches'} />
+                            <Route component={AboutPage} path={'/about'} />
+                            <Route path={'/'}>
+                               <ResultsList isListMode={isListMode} resultsList={resultsForList()} />
+                            </Route>
+                        </Switch>
+                    </CSSTransition>
+                </TransitionGroup>
             </div>
             <ListControls onNextResults={onNextResults} onChangeMode={onChangeMode} />
         </div>
