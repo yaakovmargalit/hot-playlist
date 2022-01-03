@@ -19,6 +19,8 @@ export function HomePage() {
 
     const [searchTerm, setSearchTerm] = useState('')
     const [isListMode, setDisplayList] = useState(storageService.load('display-mode', true))
+
+    // Keep the list in the app store so that it is saved when switching between components
     const { results, page } = useSelector(state => state.resultsModule)
     const dispatch = useDispatch()
     const loc = useLocation()
@@ -42,11 +44,12 @@ export function HomePage() {
 
     const resultsForList = () => {
         return results.slice(page, page + 6)
-
     }
     const onNextResults = () => {
-        dispatch(setResultsPage())
+        dispatch(setResultsPage()) //Updates the store on the current page
     }
+
+    // Switches between list and grid and saves the selection
     const onChangeMode = (isList) => {
         setDisplayList(isList)
         storageService.store('display-mode', isList)
@@ -55,6 +58,7 @@ export function HomePage() {
         <div className="home-page ">
             <div className="container">
                 <AppHeader onSearch={onSearch} />
+                {/* Components for animating transitions between pages */}
                 <TransitionGroup className='app-center'>
                     <CSSTransition timeout={200} classNames='fade' key={loc.key}>
                         <Switch location={loc} >

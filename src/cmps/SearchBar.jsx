@@ -2,7 +2,7 @@ import { useForm } from '../hooks/useForm'
 
 
 export function SearchBar(props) {
-
+    // Custom hook for management two way binding
     const [searchTerm, handleChange] = useForm({
         term: ''
     })

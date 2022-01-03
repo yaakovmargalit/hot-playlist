@@ -3,7 +3,7 @@ export function AboutPage() {
     return (
         <div className="about-page">
         <div className="about-content">
-            <span class="material-icons">
+            <span className="material-icons">
                 queue_music
             </span>
             <p>In this app you can search and play playlists of the best musicians in the world

@@ -4,6 +4,7 @@ export const searchService = {
     getPlalist,
     saveRecentSearches
 }
+// Gets the data from "mixcloud"
 async function getPlalist(term) {
     try {
         const res = await axios.get(`https://api.mixcloud.com/search/?q=${term}&type=cloudcast`)
@@ -11,7 +12,7 @@ async function getPlalist(term) {
     } catch (error) {
     }
 }
-
+// Entering 5 last searches
 function saveRecentSearches(term){
     if(!storageService.load('recent-searches')){
         storageService.store('recent-searches',[])

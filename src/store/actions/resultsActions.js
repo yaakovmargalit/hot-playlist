@@ -11,6 +11,8 @@ export function loadResults(term) {
         }
     }
 }
+// Updating the current page. 
+// And back to the beginning if we have reached the end of the list
 export function setResultsPage() {
     return (dispatch, getState) => {
         var { results, page } = getState().resultsModule
